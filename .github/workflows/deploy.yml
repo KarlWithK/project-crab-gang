@@ -39,9 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Test Deployment
-        run: 
-
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
