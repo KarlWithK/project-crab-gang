@@ -1,8 +1,9 @@
 name: Run Tests
 on:
-  push:
-    branches:
-      - main
+  # we have this ./gihub/workflow/test.yml
+  # push:
+  #   branches:
+  #     - main
   pull_request:
     branches:
       - main
