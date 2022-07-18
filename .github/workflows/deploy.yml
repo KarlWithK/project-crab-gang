@@ -29,8 +29,6 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Print project root directory
-        run: ssh -i ~/.ssh/deploy-key $SSH_USER@$SSH_IP 'cd $PROJECT_ROOT && pwd'
+        run: ssh my-vm 'cd $PROJECT_ROOT && pwd'
         env:
-          SSH_USER: ${{ secrets.SSH_USER }}
           PROJECT_ROOT: ${{ secrets.PROJECT_ROOT }}
-          SSH_IP: ${{ secrets.SSH_IP }}
