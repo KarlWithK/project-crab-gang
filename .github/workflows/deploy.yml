@@ -30,3 +30,6 @@ jobs:
 
       - name: Deploy Site
         run: ssh my-vm '~/redeploy-site.sh'
+
+      - name: Check Docker Compose Status
+        run: ssh my-vm "cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps"
