@@ -12,20 +12,5 @@ else
 	exit
 fi
 
-
-
-PROJECTS_DIR="/root/projects/"
-FLASK_ENV="/root/projects/flask"
-
-if [[ ! -d "FLASK_ENV" ]]; then
-	cd "$PROJECTS_DIR" || exit
-	python -m venv flask
-	cd "$PROJECT_DIR" || exit
-fi
-
-source "$FLASK_ENV"/bin/activate
-
-pip install -r requirements.txt
-
-systemctl daemon-reload
-systemctl restart myportfolio.service
+docker-compose -f docker-compose.prod.yml down
+docker-compose -f docker-compose.prod.yml up -d --build
